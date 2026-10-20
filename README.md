@@ -92,4 +92,5 @@ The mark is a protein sequence logo whose most conserved residue at each of four
 ## Licences
 
 - Font: Atkinson Hyperlegible Next, © The Atkinson Hyperlegible Next Project Authors, SIL Open Font License 1.1 (`static/fonts/OFL.txt`).
-- Code and content: to be decided by the organising committee (suggestion: MIT for the code, CC BY 4.0 for the content).
+- Code: MIT
+- Content: CC BY 4.0
