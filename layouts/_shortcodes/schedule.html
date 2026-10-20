@@ -1,0 +1,3 @@
+{{- /* Usage: {{< schedule >}} or {{< schedule edition="2027" >}} */ -}}
+{{- $edition := or (.Get "edition") .Page.Params.edition site.Params.currentEdition -}}
+{{ partial "schedule.html" (string $edition) }}

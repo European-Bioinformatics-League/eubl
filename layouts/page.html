@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="wrap page">
+  <header class="page-header">
+    {{- with .Parent }}{{ if not .IsHome }}<p class="breadcrumb"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.lede }}<p class="lede">{{ . | markdownify }}</p>{{ end }}
+  </header>
+  {{- if eq .Params.status "draft" }}
+  <aside class="notice" role="note">
+    <p><strong>Draft.</strong> {{ or .Params.statusNote "This page is still being discussed by the organising committee and may change." | markdownify }}</p>
+  </aside>
+  {{- end }}
+  {{- if and .Params.toc (gt (len .TableOfContents) 40) }}
+  <nav class="toc" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    {{ .TableOfContents }}
+  </nav>
+  {{- end }}
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

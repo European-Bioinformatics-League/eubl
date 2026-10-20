@@ -1,0 +1,8 @@
+{{- /* Usage: {{< partners >}} or {{< partners edition="2027" >}} */ -}}
+{{- $edition := or (.Get "edition") .Page.Params.edition site.Params.currentEdition -}}
+{{- $data := index hugo.Data.editions (string $edition) -}}
+{{- with $data.partners -}}
+  {{- if or .organisers .sponsors }}{{ partial "partners.html" . }}{{ else }}<p>Partner institutions will be listed here once confirmed.</p>{{ end -}}
+{{- else -}}
+<p>Partner institutions will be listed here once confirmed.</p>
+{{- end -}}

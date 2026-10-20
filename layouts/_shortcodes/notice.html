@@ -1,0 +1,2 @@
+{{- /* Usage: {{< notice >}}Some **Markdown** text.{{< /notice >}} */ -}}
+<aside class="notice" role="note">{{ .Inner | .Page.RenderString (dict "display" "block") }}</aside>

@@ -1,0 +1,26 @@
+{{- /*
+  Renders data/editions/<edition>/schedule.yaml as a timeline.
+  Context: the edition year as a string, e.g. "2027".
+*/ -}}
+{{- $data := index hugo.Data.editions . }}
+{{- with $data.schedule }}
+<ol class="schedule">
+  {{- range . }}
+  {{- $last := or .end .start }}
+  {{- $past := and $last (lt (time.AsTime $last) now) }}
+  <li class="schedule-step{{ if $past }} is-past{{ end }}{{ if not .round }} is-registration{{ end }}">
+    <span class="schedule-marker" aria-hidden="true">{{ with .round }}{{ . }}{{ end }}</span>
+    <h3 class="schedule-title">{{ with .round }}<span class="visually-hidden">Round {{ . }}: </span>{{ end }}{{ .title }}</h3>
+    <p class="schedule-date">
+      {{- partial "daterange.html" (dict "start" .start "end" .end) -}}
+      {{- with .time }}, {{ . }}{{ end -}}
+      {{- if $past }} <span class="schedule-done">(finished)</span>{{ end -}}
+    </p>
+    {{- with .place }}<p class="schedule-place">{{ . }}</p>{{ end }}
+    {{- with .summary }}<p class="schedule-summary">{{ . | markdownify }}</p>{{ end }}
+  </li>
+  {{- end }}
+</ol>
+{{- else }}
+<p>The schedule for this edition has not been published yet.</p>
+{{- end }}

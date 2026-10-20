@@ -1,0 +1,7 @@
+# Institutions involved in the 2027 edition, by id from data/institutions.yaml.
+# Example:
+#   organisers: [lpb]
+#   sponsors: []
+
+organisers: []
+sponsors: []

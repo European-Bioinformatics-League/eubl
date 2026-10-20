@@ -1,0 +1,52 @@
+baseURL = "https://eubl.org/"
+locale = "en"
+title = "European Bioinformatics League"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  short = "EUBL"
+  description = "A team competition in bioinformatics and computational biology for higher-education students across Europe."
+  # The edition shown on the home page and used by shortcodes by default.
+  currentEdition = "2027"
+  # Leave empty until registration opens; the home page then shows a disabled button.
+  registrationURL = ""
+  email = "contact@eubl.org"          # TODO: confirm the real address
+  sourceURL = "https://github.com/eubl/eubl.github.io"  # TODO: set to the real repository
+
+# Top navigation, in display order.
+[menus]
+  [[menus.main]]
+    name = "How it works"
+    pageRef = "/competition"
+    weight = 10
+  [[menus.main]]
+    name = "Rules"
+    pageRef = "/rules"
+    weight = 20
+  [[menus.main]]
+    name = "Preparation"
+    pageRef = "/preparation"
+    weight = 30
+  [[menus.main]]
+    name = "Editions"
+    pageRef = "/editions"
+    weight = 40
+  [[menus.main]]
+    name = "FAQ"
+    pageRef = "/faq"
+    weight = 50
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 60
+
+[markup.goldmark.renderer]
+  # Allows plain HTML inside Markdown files when really needed.
+  unsafe = true
+
+[markup.goldmark.parser.attribute]
+  block = true
+
+[minify]
+  minifyOutput = true

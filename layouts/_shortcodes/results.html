@@ -1,0 +1,38 @@
+{{- /*
+  Usage: {{< results >}} or {{< results edition="2027" >}}
+  Reads data/editions/<edition>/results.yaml. Rounds with `published: false`
+  show the date on which results are expected (from schedule.yaml).
+*/ -}}
+{{- $edition := or (.Get "edition") .Page.Params.edition site.Params.currentEdition -}}
+{{- $data := index hugo.Data.editions (string $edition) -}}
+{{- $schedule := $data.schedule | default slice -}}
+{{- range $data.results.rounds }}
+{{- $r := . }}
+{{- $step := dict }}{{ with where $schedule "round" $r.round }}{{ $step = index . 0 }}{{ end }}
+<section class="results-round" id="round-{{ $r.round }}">
+  <h3>Round {{ $r.round }}{{ with $step.title }}: {{ . }}{{ end }}</h3>
+  {{- if and $r.published $r.teams }}
+  {{- with $r.note }}<p>{{ . | markdownify }}</p>{{ end }}
+  <div class="table-scroll">
+  <table class="results-table">
+    <thead><tr><th scope="col">Rank</th><th scope="col">Team</th><th scope="col">Institution</th><th scope="col">Country</th><th scope="col" class="num">Score</th></tr></thead>
+    <tbody>
+      {{- range $i, $t := sort $r.teams "score" "desc" }}
+      <tr{{ if $t.qualified }} class="is-qualified"{{ end }}>
+        <td class="num">{{ add $i 1 }}</td>
+        <td>{{ $t.team }}{{ if $t.qualified }} <span class="qualified-tag">qualified</span>{{ end }}</td>
+        <td>{{ $t.institution }}</td>
+        <td>{{ $t.country }}</td>
+        <td class="num">{{ $t.score }}</td>
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+  </div>
+  {{- else }}
+  <p class="results-pending">Results will be published {{ with $step.results }}by {{ (time.AsTime .).Format "2 January 2006" }}{{ else }}after the round has finished{{ end }}.</p>
+  {{- end }}
+</section>
+{{- else }}
+<p>Results will appear here after each round.</p>
+{{- end }}

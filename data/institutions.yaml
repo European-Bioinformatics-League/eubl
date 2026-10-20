@@ -1,0 +1,10 @@
+# Every institution that has organised or sponsored an edition, defined once.
+# Editions refer to institutions by their id (the key).
+# `logo` is a file name in static/logos/ (prefer SVG; otherwise WebP or PNG under 100 kB).
+# Without a logo, the name is shown as text.
+
+lpb:
+  name: Liga Portuguesa de Bioinformática
+  country: Portugal
+  url: https://lpb.pt/
+  logo:

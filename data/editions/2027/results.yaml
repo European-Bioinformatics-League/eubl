@@ -1,0 +1,25 @@
+# Results of the 2027 edition. A round is shown only when `published: true`.
+# Teams are ranked by `score` automatically (highest first).
+# Mark the teams that go through to the next round with `qualified: true`.
+#
+# Example:
+#   - round: 1
+#     published: true
+#     note: Teams needed 50% in each area to qualify.
+#     teams:
+#       - team: Example team
+#         institution: University of Somewhere
+#         country: Portugal
+#         score: 27.5
+#         qualified: true
+
+rounds:
+  - round: 1
+    published: false
+    teams: []
+  - round: 2
+    published: false
+    teams: []
+  - round: 3
+    published: false
+    teams: []

@@ -1,0 +1,38 @@
+# Schedule of the 2027 edition, in chronological order.
+#
+# Dates are ISO 8601 (YYYY-MM-DD). Leave `start`/`end` empty while a date is
+# not fixed; the site then shows "To be announced". A step whose last date is
+# in the past is shown as finished (the site is rebuilt daily).
+#
+# Fields: id, round (1-3, omit for registration), title, start, end, time,
+#         place, results (date by which results are published), summary (Markdown).
+
+- id: registration
+  title: Registration
+  start:
+  end:
+  summary: Teams of two register online.
+
+- id: round1
+  round: 1
+  title: Questions
+  start:
+  time:
+  results:
+  summary: An online set of questions on biology, computer science and bioinformatics. Teams that reach the threshold go through.
+
+- id: round2
+  round: 2
+  title: Capture the flag
+  start:
+  end:
+  results:
+  summary: Hands-on computational biology challenges, each hiding a flag to find and submit. The best teams go through to the final.
+
+- id: round3
+  round: 3
+  title: Hackathon
+  start:
+  end:
+  place: Bioinformatics Open Days 2027
+  summary: Finalists develop a project set by the organisers and present it in person at the Bioinformatics Open Days.

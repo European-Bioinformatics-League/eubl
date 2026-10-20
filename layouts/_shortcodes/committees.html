@@ -1,0 +1,16 @@
+{{- /* Usage: {{< committees >}} or {{< committees edition="2027" >}} */ -}}
+{{- $edition := or (.Get "edition") .Page.Params.edition site.Params.currentEdition -}}
+{{- $data := index hugo.Data.editions (string $edition) -}}
+{{- $groups := slice (dict "key" "organising" "label" "Organising committee") (dict "key" "scientific" "label" "Scientific committee") -}}
+{{- range $g := $groups }}
+<h3>{{ $g.label }}</h3>
+{{- with index ($data.committees | default dict) $g.key }}
+<ul class="people">
+  {{- range sort . "name" }}
+  <li><span class="person-name">{{ .name }}</span>{{ with .affiliation }}<span class="person-affiliation">{{ . }}</span>{{ end }}</li>
+  {{- end }}
+</ul>
+{{- else }}
+<p>Members will be announced soon.</p>
+{{- end }}
+{{- end }}

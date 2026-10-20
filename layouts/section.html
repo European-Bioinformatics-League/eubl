@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="wrap page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.lede }}<p class="lede">{{ . | markdownify }}</p>{{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  <ul class="edition-list">
+    {{- range .Pages.ByTitle.Reverse }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- with .Description }}<p>{{ . }}</p>{{ end }}
+    </li>
+    {{- end }}
+  </ul>
+</article>
+{{ end }}

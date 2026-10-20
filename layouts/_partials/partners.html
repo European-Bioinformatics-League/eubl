@@ -1,0 +1,25 @@
+{{- /*
+  Context: the "partners" map of an edition, with lists of institution ids
+  under "organisers" and "sponsors". Institutions are defined once in
+  data/institutions.yaml.
+*/ -}}
+{{- $groups := slice (dict "key" "organisers" "label" "Organising institutions") (dict "key" "sponsors" "label" "Sponsors") }}
+{{- $p := . }}
+{{- range $g := $groups }}
+{{- with index $p $g.key }}
+<h3 class="partners-heading">{{ $g.label }}</h3>
+<ul class="partners">
+  {{- range . }}
+  {{- $i := index hugo.Data.institutions . }}
+  {{- if not $i }}{{ errorf "partners: unknown institution id %q (add it to data/institutions.yaml)" . }}{{ end }}
+  <li>
+    <a href="{{ $i.url }}">
+      {{- with $i.logo }}<img src="{{ printf "logos/%s" . | relURL }}" alt="{{ $i.name }}" loading="lazy">
+      {{- else }}<span class="partner-name">{{ $i.name }}</span>{{ end -}}
+    </a>
+    {{- with $i.country }}<span class="partner-country">{{ . }}</span>{{ end }}
+  </li>
+  {{- end }}
+</ul>
+{{- end }}
+{{- end }}
