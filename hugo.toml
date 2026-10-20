@@ -12,7 +12,7 @@ disableKinds = ["taxonomy", "term", "rss"]
   # Leave empty until registration opens; the home page then shows a disabled button.
   registrationURL = ""
   email = "contact@eubl.org"          # TODO: confirm the real address
-  sourceURL = "https://github.com/eubl/eubl.github.io"  # TODO: set to the real repository
+  sourceURL = "https://github.com/European-Bioinformatics-League/eubl"
 
 # Top navigation, in display order.
 [menus]

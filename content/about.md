@@ -9,7 +9,7 @@ The European Bioinformatics League offers that chance. It is a competition for t
 
 ## History
 
-The league grows out of the [Liga Portuguesa de Bioinformática](https://lpb.pt/) (LPB), which was itself inspired by the Liga Brasileira de Bioinformática. The first edition of the LPB ran in 2022 and 2023. Its 2025 edition was open to international participants and drew teams from Portugal, Spain, Slovenia, the United Kingdom, Chile and India, with a final held at the Bioinformatics Open Days in Braga. The European Bioinformatics League continues that work at European scale, beginning with the 2027 edition.
+The league grows out of the [Liga Portuguesa de Bioinformática](https://lpb.pt/) (LPB), which was itself inspired by the Liga Brasileira de Bioinformática. The first edition of the LPB ran in 2022 and 2023. Its 2026 edition was open to international participants and drew teams from Portugal, Spain, Slovenia, the United Kingdom, Chile and India, with a final held at the Bioinformatics Open Days in Braga. The European Bioinformatics League continues that work at European scale, beginning with the 2027 edition.
 
 ## Organisation
 

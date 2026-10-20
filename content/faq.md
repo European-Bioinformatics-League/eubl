@@ -20,10 +20,6 @@ Yes. The first round covers biology as well as computer science, and a team that
 
 Each challenge is a computational problem whose correct solution reveals a short answer string, the *flag*. Teams submit flags on the competition platform and score points for each correct one. No previous experience with the format is needed; [picoCTF](https://picoctf.org/) is a good place to try it.
 
-## Does it cost anything to take part?
-
-To be confirmed.
-
 ## Do I have to travel for the final?
 
 Yes. The third round takes place in person at the Bioinformatics Open Days 2027. Whether travel support is available to finalists is to be confirmed.
