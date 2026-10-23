@@ -29,7 +29,7 @@
       link.removeAttribute("href");
       link.style.background = "#777";
       link.style.pointerEvents = "none";
-      link.setAttribu      link.sabled", "true");
+      link.setAttribute("aria-disabled", "true");
     }
   }
 
