@@ -1,8 +1,21 @@
-# Committees of the 2027 edition. Lists are sorted alphabetically on the site.
-# Example entry:
-#   - name: Jane Doe
-#     affiliation: University of Somewhere
+# Committees of the 2027 edition.
 
-organising: []
+organising:
+  - name: "Célia Domingues"
+    affiliation: "Centre for Ecology, Evolution and Environmental Changes"
+
+  - name: "Daniela Deodato"
+
+  - name: "Francisco Pina Martins"
+    affiliation: "Polytechnic Institute of Setúbal"
+
+  - name: "Francisco Pinto"
+    affiliation: "University of Lisbon"
+
+  - name: "João Rebelo"
+    affiliation: "Gulbenkian Institute for Molecular Medicine"
+
+  - name: "Miguel Rocha"
+    affiliation: "University of Minho"
 
 scientific: []
