@@ -96,7 +96,8 @@ python3 tools/prepare_logo.py
 
 which writes
 
-- `layouts/_partials/logo.html`: the logo without its subtitle, inlined in the header and on the home page. Its colours come from the stylesheet (`.logo-letters`, `.logo-strand-1`, `.logo-strand-2` in `assets/css/main.css`), so it follows dark mode, and its lines keep a readable width at any size;
+- `layouts/_partials/logo.html`: the logo without its subtitle, inlined in the header, where the subtitle would be too small to read;
+- `layouts/_partials/logo-full.html`: the same with the subtitle, inlined on the home page. Its colours come from the stylesheet (`.logo-letters`, `.logo-subtitle`, `.logo-strand-1`, `.logo-strand-2` in `assets/css/main.css`), so they follow dark mode, and its lines keep a readable width at any size;
 - `static/logo.svg`: the full logo with subtitle, cleaned of editor metadata, for posters, slides and partners (<https://eubl.org/logo.svg>);
 - `static/favicon.svg`: the browser-tab icon, the letters in two rows on a purple tile.
 

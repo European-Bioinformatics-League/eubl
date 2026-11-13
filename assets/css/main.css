@@ -97,7 +97,7 @@ p, ul, ol, table { margin: 0 0 1em; }
    Strokes use vector-effect: non-scaling-stroke, so their width is set here in
    screen pixels for each size of the logo. */
 .logo { display: block; height: auto; }
-.logo-letters { fill: var(--purple); }
+.logo-letters, .logo-subtitle { fill: var(--purple); }
 .logo-strand { fill: none; stroke-linecap: square; stroke-width: 1.25px; }
 .logo-strand-1 { stroke: var(--mauve); }
 .logo-strand-2 { stroke: var(--green); }
