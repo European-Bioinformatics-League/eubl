@@ -16,23 +16,23 @@
 - id: round1
   round: 1
   title: Questions
-  start:
-  time:
-  results:
+  start: 2026-12-21
+  time: 0:00
+  results: 2027-01-08
   summary: An online set of questions on biology, computer science and bioinformatics. Teams that reach the threshold go through.
 
 - id: round2
   round: 2
   title: Capture the flag
-  start:
-  end:
-  results:
+  start: 2027-02-15
+  end: 2027-02-17
+  results: 2027-02-26
   summary: Hands-on computational biology challenges, each hiding a flag to find and submit. The best teams go through to the final.
 
 - id: round3
   round: 3
   title: Hackathon
-  start:
-  end:
+  start: 2027-04-21
+  end: 2027-04-21
   place: Bioinformatics Open Days 2027
   summary: Finalists develop a project set by the organisers and present it in person at the Bioinformatics Open Days.
