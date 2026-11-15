@@ -6,9 +6,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Daily rebuild, so that past rounds are marked as finished without a commit.
+  # Daily rebuild just after midnight UTC, so that past rounds are marked as
+  # finished and the registration button opens/closes (registrationOpens and
+  # registrationCloses in hugo.toml) without a commit. Set those times to
+  # midnight UTC. GitHub may start scheduled runs some minutes late.
   schedule:
-    - cron: "17 3 * * *"
+    - cron: "2 0 * * *"
 
 permissions:
   contents: read
