@@ -11,7 +11,7 @@ disableKinds = ["taxonomy", "term", "rss"]
   currentEdition = "2027"
   registrationURL = "https://docs.google.com/forms/d/e/1FAIpQLScXM7rclVt-fubMXJ6j_PJHGuNRVs46jlBiPmZMOV9efB4BDw/viewform?usp=dialog"
   registrationOpens = "2026-11-16T00:00:00Z"
-  registrationCloses = "2026-12-17T00:00:00Z"
+  registrationCloses = "2026-12-17T23:59:59Z"
   email = "contact@eubl.org"
   sourceURL = "https://github.com/European-Bioinformatics-League/eubl"
 
