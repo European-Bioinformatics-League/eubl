@@ -9,8 +9,8 @@
 
 - id: registration
   title: Registration
-  start:
-  end:
+  start: 2026-11-16
+  end: 2026-11-17
   summary: Teams of two register online.
 
 - id: round1

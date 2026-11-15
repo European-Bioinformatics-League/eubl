@@ -10,8 +10,8 @@ disableKinds = ["taxonomy", "term", "rss"]
   # The edition shown on the home page and used by shortcodes by default.
   currentEdition = "2027"
   registrationURL = "/competition/"
-  registrationOpens = "2026-11-12T00:00:00Z"
-  registrationCloses = "2026-11-13T00:00:00Z"
+  registrationOpens = "2026-11-16T00:00:00Z"
+  registrationCloses = "2026-12-17T00:00:00Z"
   email = "contact@eubl.org"          # TODO: confirm the real address
   sourceURL = "https://github.com/European-Bioinformatics-League/eubl"
 
