@@ -61,7 +61,7 @@ The dates of each round and the selection criteria may change; any change is ann
 ### 5.3 Third round: hackathon
 
 - Finalists develop a project set by the organising committee.
-- Teams present their project in person at the Bioinformatics Open Days 2027. The format and duration of the presentations, and the assessment criteria, are *to be confirmed*.
+- Teams present their project in person at the Bioinformatics Open Days 2027, held on the University of Minho campus in Braga. The format and duration of the presentations, and the assessment criteria, are *to be confirmed*.
 
 ## 6. Conduct
 

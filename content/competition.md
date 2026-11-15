@@ -14,7 +14,7 @@ Teams have two members, who register together and compete together in every roun
 
 2. **Capture the flag.** A set of computational biology challenges, released at the same time to all teams and open for a fixed period. Each challenge hides a *flag*, a short answer string that a correct analysis reveals, which the team submits on the competition platform. Challenges score according to difficulty; the best-ranked teams go through to the final.
 
-3. **Hackathon.** Finalists receive a project brief from the organising committee and develop a solution, which they present in person at the Bioinformatics Open Days 2027. A jury assesses the projects, and the winners are announced at the event.
+3. **Hackathon.** Finalists receive a project brief from the organising committee and develop a solution, which they present in person at the Bioinformatics Open Days 2027, on the University of Minho campus in Braga, Portugal. A jury assesses the projects, and the winners are announced at the event.
 {.rounds}
 
 ## Dates
@@ -25,6 +25,6 @@ Teams have two members, who register together and compete together in every roun
 
 - A computer with a reliable internet connection for the online rounds.
 - For the capture-the-flag round, the ability to run command-line tools and write short scripts, for example in Python or R.
-- For the final, the availability to travel to the Bioinformatics Open Days 2027.
+- For the final, the availability to travel to the Bioinformatics Open Days 2027 in Braga, Portugal.
 
 Questions not answered here may be answered in the [FAQ](/faq/); otherwise, write to the organisers.

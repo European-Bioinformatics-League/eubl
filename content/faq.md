@@ -22,7 +22,7 @@ Each challenge is a computational problem whose correct solution reveals a short
 
 ## Do I have to travel for the final?
 
-Yes. The third round takes place in person at the Bioinformatics Open Days 2027. Whether travel support is available to finalists is to be confirmed.
+Yes. The third round takes place in person at the Bioinformatics Open Days 2027, on the University of Minho campus in Braga, Portugal. Whether travel support is available to finalists is to be confirmed.
 
 ## How do we register?
 
