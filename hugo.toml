@@ -9,10 +9,10 @@ disableKinds = ["taxonomy", "term", "rss"]
   description = "A team competition in bioinformatics and computational biology for higher-education students across Europe."
   # The edition shown on the home page and used by shortcodes by default.
   currentEdition = "2027"
-  registrationURL = "/competition/"
+  registrationURL = "https://docs.google.com/forms/d/e/1FAIpQLScXM7rclVt-fubMXJ6j_PJHGuNRVs46jlBiPmZMOV9efB4BDw/viewform?usp=dialog"
   registrationOpens = "2026-11-16T00:00:00Z"
   registrationCloses = "2026-12-17T00:00:00Z"
-  email = "contact@eubl.org"          # TODO: confirm the real address
+  email = "contact@eubl.org"
   sourceURL = "https://github.com/European-Bioinformatics-League/eubl"
 
 # Top navigation, in display order.
