@@ -39,6 +39,7 @@ description: One sentence for search engines and link previews.
 lede: An introductory paragraph shown under the title.
 status: draft              # shows a "Draft" notice at the top of the page
 statusNote: Custom text for that notice.
+notice: A highlighted note shown at the top of the page (Markdown).
 toc: true                  # shows a table of contents
 ```
 

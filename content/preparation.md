@@ -2,8 +2,6 @@
 title: Preparation
 description: Open resources and reading to prepare for the European Bioinformatics League.
 lede: Resources for preparing each round, with freely available material listed first.
-status: draft
-statusNote: This list is carried over from the Liga Portuguesa de Bioinformática and will be reviewed by the scientific committee.
 ---
 
 ## Practice problems

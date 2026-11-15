@@ -2,8 +2,6 @@
 title: How the competition works
 description: The three rounds of the European Bioinformatics League and what each one asks of a team.
 lede: Three rounds, each selecting the teams for the next. The first two are held online; the third takes place in person at the Bioinformatics Open Days 2027.
-status: draft
-statusNote: Formats, durations and qualification thresholds are still being defined by the organising committee.
 ---
 
 ## Teams

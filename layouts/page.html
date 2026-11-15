@@ -10,6 +10,9 @@
     <p><strong>Draft.</strong> {{ or .Params.statusNote "This page is still being discussed by the organising committee and may change." | markdownify }}</p>
   </aside>
   {{- end }}
+  {{- with .Params.notice }}
+  <aside class="notice" role="note"><p>{{ . | markdownify }}</p></aside>
+  {{- end }}
   {{- if and .Params.toc (gt (len .TableOfContents) 40) }}
   <nav class="toc" aria-label="On this page">
     <p class="toc-title">On this page</p>

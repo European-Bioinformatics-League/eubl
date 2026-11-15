@@ -2,8 +2,7 @@
 title: Rules
 description: Rules and regulations of the European Bioinformatics League.
 lede: Rules and regulations of the European Bioinformatics League, 2027 edition.
-status: draft
-statusNote: These rules are adapted from the 2025 regulations of the Liga Portuguesa de Bioinformática and have not yet been approved for the European Bioinformatics League. Points marked *to be confirmed* are open.
+notice: These rules may still change. Any change is announced on this website. Points marked *to be confirmed* are still open.
 toc: true
 ---
 
