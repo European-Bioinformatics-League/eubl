@@ -7,7 +7,8 @@
 <ol class="schedule">
   {{- range . }}
   {{- $last := or .end .start }}
-  {{- $past := and $last (lt (time.AsTime $last) now) }}
+  {{- /* A step is finished once its last day is over (dates are read as UTC). */}}
+  {{- $past := and $last (lt ((time.AsTime $last).Add (time.ParseDuration "24h")) now) }}
   <li class="schedule-step{{ if $past }} is-past{{ end }}{{ if not .round }} is-registration{{ end }}">
     <span class="schedule-marker" aria-hidden="true">{{ with .round }}{{ . }}{{ end }}</span>
     <h3 class="schedule-title">{{ with .round }}<span class="visually-hidden">Round {{ . }}: </span>{{ end }}{{ .title }}</h3>
