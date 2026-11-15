@@ -184,6 +184,9 @@ p, ul, ol, table { margin: 0 0 1em; }
 .prose blockquote { margin: 1.5em 0; padding-left: 1.2rem; border-left: 3px solid var(--rule); color: var(--ink-soft); }
 .prose code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.3em; border-radius: 0.2em; }
 .band .prose h2:first-child { font-size: var(--s-36); }
+.prose table { border-collapse: collapse; width: 100%; font-size: var(--s-16); margin: 1.25em 0 1.5em; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem 0.6rem 0; border-bottom: 1px solid var(--rule); }
+.prose th { font-weight: 700; border-bottom: 2px solid var(--ink); }
 
 .notice {
   max-width: var(--measure); margin: 0 0 2rem; padding: 1rem 1.25rem;

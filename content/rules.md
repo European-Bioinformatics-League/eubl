@@ -37,7 +37,7 @@ Whether eligibility is restricted to students at European institutions is *to be
 
 ## 4. Registration
 
-Teams register online through the form linked from the official website, within the registration period given in the [schedule](/editions/2027/).
+Teams register online through the form linked from the official website, within the registration period given in the [schedule](/editions/2027/). The [privacy notice](/privacy/) explains how registration data are handled.
 
 ## 5. Structure and assessment
 

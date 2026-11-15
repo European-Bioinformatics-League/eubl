@@ -26,4 +26,4 @@ Yes. The third round takes place in person at the Bioinformatics Open Days 2027.
 
 ## How do we register?
 
-Through the registration form linked from the [home page](/) once registration opens.
+Through the registration form linked from the [home page](/) while registration is open. The [privacy notice](/privacy/) explains how we handle the data you give us.
