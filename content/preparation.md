@@ -9,7 +9,7 @@ lede: Resources for preparing each round, with freely available material listed 
 - [Rosalind](https://rosalind.info/problems/list-view/): programming problems in bioinformatics, graded automatically. Good practice for the capture-the-flag round.
 - [picoCTF](https://picoctf.org/): a free, beginner-friendly capture-the-flag platform for getting used to the format.
 - [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/): a game that teaches the Unix command line step by step.
-- Past questions of the Liga Portuguesa de Bioinformática, on [lpb.pt](https://lpb.pt/).
+- Past questions of the Liga Portuguesa de Bioinformática, on [lpb.pt](https://lpbio.github.io/).
 
 ## Courses and training
 

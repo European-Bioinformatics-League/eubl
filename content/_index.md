@@ -13,4 +13,4 @@ Each round selects the teams for the next one. The first round is an online set 
 
 ## Where the league comes from
 
-The European Bioinformatics League grows out of the [Liga Portuguesa de Bioinformática](https://lpb.pt/), which has run since 2022 and whose 2026 edition already drew teams from several European countries and beyond. [More about the league](/about/).
+The European Bioinformatics League grows out of the [Liga Portuguesa de Bioinformática](https://lpbio.github.io/), which has run since 2022 and whose 2026 edition already drew teams from several European countries and beyond. [More about the league](/about/).
