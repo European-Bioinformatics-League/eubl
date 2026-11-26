@@ -1,24 +1,117 @@
-# Committees of the 2027 edition.
+# Committees of the 2027 edition. The site sorts each list by first name.
+# Affiliation format: "Institution, Country".
 
 organising:
   - name: "Célia Domingues"
-    affiliation: "Centre for Ecology, Evolution and Environmental Changes"
+    affiliation: "Centre for Ecology, Evolution and Environmental Changes, Portugal"
 
   - name: "Daniela Deodato"
+    affiliation: "Freelance"
 
   - name: "Diogo Pratas"
-    affiliation: "University of Aveiro"
+    affiliation: "University of Aveiro, Portugal"
 
   - name: "Francisco Pina Martins"
-    affiliation: "Polytechnic University of Setúbal"
+    affiliation: "Polytechnic University of Setúbal, Portugal"
 
   - name: "Francisco Pinto"
-    affiliation: "University of Lisbon"
+    affiliation: "University of Lisbon, Portugal"
 
   - name: "João Rebelo"
-    affiliation: "Gulbenkian Institute for Molecular Medicine"
+    affiliation: "Gulbenkian Institute for Molecular Medicine, Portugal"
 
   - name: "Miguel Rocha"
-    affiliation: "University of Minho"
+    affiliation: "University of Minho, Portugal"
 
-scientific: []
+scientific:
+  # Portugal and Brazil
+  - name: "Bruno Nevado"
+    affiliation: "University of Lisbon, Portugal"
+
+  - name: "Diogo Pratas"
+    affiliation: "University of Aveiro, Portugal"
+
+  - name: "Francisco Couto"
+    affiliation: "University of Lisbon, Portugal"
+
+  - name: "Francisco Pina Martins"
+    affiliation: "Polytechnic University of Setúbal, Portugal"
+
+  - name: "Francisco Pinto"
+    affiliation: "University of Lisbon, Portugal"
+
+  - name: "Irina Moreira"
+    affiliation: "University of Coimbra, Portugal"
+
+  - name: "Isabel Duarte"
+    affiliation: "University of the Algarve, Portugal"
+
+  - name: "João Carneiro"
+    affiliation: "University of Porto, Portugal"
+
+  - name: "Joel P. Arrais"
+    affiliation: "University of Coimbra, Portugal"
+
+  - name: "Lucas Carvalho"
+    affiliation: "São Francisco University, Brazil"
+
+  - name: "Miguel Rocha"
+    affiliation: "University of Minho, Portugal"
+
+  - name: "Pedro G. Ferreira"
+    affiliation: "University of Porto, Portugal"
+
+  - name: "Pedro Monteiro"
+    affiliation: "University of Lisbon, Portugal"
+
+  - name: "Sérgio F. Sousa"
+    affiliation: "University of Porto, Portugal"
+
+  - name: "Vítor J. Sá"
+    affiliation: "Technical University of Porto, Portugal"
+
+  # Rest of Europe
+  - name: "Anália Lourenço"
+    affiliation: "University of Vigo, Spain"
+
+  - name: "Daniel Machado"
+    affiliation: "Norwegian University of Science and Technology, Norway"
+
+  - name: "Egils Stalidzāns"
+    affiliation: "Rīga Stradiņš University, Latvia"
+
+  - name: "Enrique Carrillo de Santa Pau"
+    affiliation: "IMDEA Nutrition Institute, Spain"
+
+  - name: "Fotis Psomopoulos"
+    affiliation: "Centre for Research and Technology Hellas, Greece"
+
+  - name: "Francisco Planes"
+    affiliation: "University of Navarra, Spain"
+
+  - name: "Idoia Ochoa"
+    affiliation: "University of Navarra, Spain"
+
+  - name: "Ivan Erill Sagales"
+    affiliation: "Autonomous University of Barcelona, Spain"
+
+  - name: "Juan Francisco De Paz Santana"
+    affiliation: "University of Salamanca, Spain"
+
+  - name: "Magnus Palmblad"
+    affiliation: "Leiden University Medical Center, Netherlands"
+
+  - name: "Marco Fondi"
+    affiliation: "University of Florence, Italy"
+
+  - name: "Marek Ostaszewski"
+    affiliation: "University of Luxembourg, Luxembourg"
+
+  - name: "Maria Klapa"
+    affiliation: "Foundation for Research and Technology – Hellas, Greece"
+
+  - name: "María Suárez Diez"
+    affiliation: "Wageningen University & Research, Netherlands"
+
+  - name: "Salvador Capella-Gutierrez"
+    affiliation: "Barcelona Supercomputing Center, Spain"
