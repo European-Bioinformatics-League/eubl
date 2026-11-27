@@ -4,7 +4,7 @@ description: How the European Bioinformatics League handles the personal data of
 lede: How we collect, use and keep personal data when you register for the European Bioinformatics League or visit this website.
 ---
 
-This notice is given under Articles 13 and 14 of the General Data Protection Regulation (Regulation (EU) 2016/679, "GDPR"). It was last updated on 15 November 2026.
+This notice is given under Articles 13 and 14 of the General Data Protection Regulation (Regulation (EU) 2016/679, "GDPR"). It was last updated on 27 November 2026.
 
 ## Who is responsible
 
@@ -53,7 +53,7 @@ You also have the right to lodge a complaint with a data protection supervisory 
 
 ## This website
 
-This website sets no cookies, uses no analytics, and loads no content from third parties. It is hosted on GitHub Pages, which may log visitors' IP addresses for security purposes; see the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Following the link to the registration form takes you to Google, whose own privacy policy and cookies then apply.
+This website sets no cookies, uses no analytics, and loads no content from third parties. If you choose a light or dark theme with the button in the header, that choice is kept in your browser’s local storage so the site remembers it; it never leaves your device, and you can clear it in your browser settings. It is hosted on GitHub Pages, which may log visitors' IP addresses for security purposes; see the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Following the link to the registration form takes you to Google, whose own privacy policy and cookies then apply.
 
 ## Changes to this notice
 

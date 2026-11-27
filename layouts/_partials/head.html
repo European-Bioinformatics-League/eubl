@@ -21,5 +21,9 @@
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="preload" href="{{ "fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- /* Apply a theme chosen with the header toggle before the page is drawn, so it does not flash. */}}
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+{{- $js := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{- $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

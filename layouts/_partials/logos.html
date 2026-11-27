@@ -11,7 +11,7 @@
   and `logoScale` in data/institutions.yaml corrects logos that still look
   too heavy or too light (e.g. 1.15 for a thin wordmark, 0.9 for a solid block).
 */ -}}
-{{- $base := 80 }}{{/* pixels per unit at the default --logo-unit (5rem) */}}
+{{- $base := 100 }}{{/* pixels per unit at the default --logo-unit (6.25rem) */}}
 <ul class="logo-wall{{ if .compact }} logo-wall-compact{{ end }}">
   {{- range .ids }}
   {{- $id := . }}
@@ -34,13 +34,16 @@
       {{- $wpx := mul $wu $base }}{{ $hpx := div $wpx $ratio }}
       {{- $px2 := int (math.Ceil (mul $hpx 2)) }}
       {{- $src := partial "logo-src.html" (dict "res" $logo "px" $px2) }}
-      {{- $img := printf `<img src="%s" alt="%s" width="%d" height="%d" style="--w: %.3f" loading="lazy">` $src (htmlEscape $i.name) (int (math.Round $wpx)) (int (math.Round $hpx)) $wu }}
+      {{- $fmt := `<img class="%s" src="%s" alt="%s" width="%d" height="%d" style="--w: %.3f" loading="lazy">` }}
+      {{- $wi := int (math.Round $wpx) }}{{ $hi := int (math.Round $hpx) }}
       {{- with $i.logoDark }}
+        {{- /* Both versions are in the page; the stylesheet shows the one for the current theme. */}}
         {{- $dark := resources.Get (printf "logos/%s" .) }}
         {{- if not $dark }}{{ errorf "logos: %q not found in assets/logos/ (institution %q)" . $id }}{{ end }}
-        <picture><source srcset="{{ partial "logo-src.html" (dict "res" $dark "px" $px2) }}" media="(prefers-color-scheme: dark)">{{ $img | safeHTML }}</picture>
+        {{- printf $fmt "logo-img-light" $src (htmlEscape $i.name) $wi $hi $wu | safeHTML }}
+        {{- printf $fmt "logo-img-dark" (partial "logo-src.html" (dict "res" $dark "px" $px2)) (htmlEscape $i.name) $wi $hi $wu | safeHTML }}
       {{- else }}
-        {{- $img | safeHTML }}
+        {{- printf $fmt "logo-img" $src (htmlEscape $i.name) $wi $hi $wu | safeHTML }}
       {{- end }}
     {{- else }}
       <span class="logo-text">{{ $i.name }}</span>

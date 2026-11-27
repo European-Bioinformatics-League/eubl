@@ -38,6 +38,13 @@
   --green: #2ca759;      /* logo strand 2; graphics only (3:1 on white) */
   --green-text: #1b7a46; /* green for text (4.5:1 or more) */
   --focus: #5d2d8d;
+  /* Logos are made for white paper: shown as they are in light mode, on a
+     light panel in dark mode, unless a dark-mode version (logoDark) exists. */
+  --logo-panel: transparent;
+  --logo-panel-ink: var(--ink);
+  --show-light-logo: block;
+  --show-dark-logo: none;
+  color-scheme: light;
 
   --font: "Atkinson Hyperlegible Next", system-ui, sans-serif;
   /* Scale after Bringhurst: 14 16 18 21 24 36 48 60 72 */
@@ -48,8 +55,11 @@
   --measure: 66ch;
   --gutter: clamp(1rem, 4vw, 2.5rem);
 }
+/* Dark theme: follows the system setting unless the visitor has chosen a
+   theme with the toggle in the header (data-theme on <html>). The two blocks
+   below must stay identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #151a23;
     --mist: #1d2430;
     --rule: #344052;
@@ -60,7 +70,29 @@
     --green: #5fd08a;
     --green-text: #5fd08a;
     --focus: #c9a6ec;
+    --logo-panel: #f3f5f8;
+    --logo-panel-ink: #1a1f2b;
+    --show-light-logo: none;
+    --show-dark-logo: block;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --paper: #151a23;
+  --mist: #1d2430;
+  --rule: #344052;
+  --ink: #e9edf3;
+  --ink-soft: #aab4c3;
+  --purple: #c9a6ec;
+  --mauve: #e0a0b0;
+  --green: #5fd08a;
+  --green-text: #5fd08a;
+  --focus: #c9a6ec;
+  --logo-panel: #f3f5f8;
+  --logo-panel-ink: #1a1f2b;
+  --show-light-logo: none;
+  --show-dark-logo: block;
+  color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -111,6 +143,17 @@ p, ul, ol, table { margin: 0 0 1em; }
 .brand { display: flex; align-items: center; gap: 0.7rem; color: var(--ink); text-decoration: none; }
 .logo-header { width: 7.5rem; }
 .brand-name { font-weight: 700; font-size: var(--s-16); line-height: 1.2; max-width: 12rem; }
+.site-nav { margin-left: auto; }
+.theme-toggle {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0;
+  border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { border-color: var(--ink-soft); }
+.theme-toggle svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { fill: currentColor; stroke: none; }
+.theme-toggle[data-current="light"] .icon-sun,
+.theme-toggle[data-current="dark"] .icon-moon { display: none; }
 .site-nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.4rem; list-style: none; margin: 0; padding: 0; }
 .site-nav a { color: var(--ink); text-decoration: none; font-size: var(--s-16); padding-block: 0.3rem; border-bottom: 2px solid transparent; }
 .site-nav a:hover { border-bottom-color: var(--rule); }
@@ -222,11 +265,11 @@ p, ul, ol, table { margin: 0 0 1em; }
    so that all logos cover the same area); --logo-unit is the side of a square
    logo. */
 .logo-wall {
-  --logo-unit: 5rem;
+  --logo-unit: 6.25rem;
   list-style: none; margin: 1.5rem 0 2rem; padding: 0;
   display: flex; flex-wrap: wrap; align-items: stretch; gap: 1rem 1.25rem;
 }
-.logo-wall-compact { --logo-unit: 3.75rem; margin-bottom: 1rem; }
+.logo-wall-compact { --logo-unit: 4.75rem; margin-bottom: 1rem; }
 /* On a page, let the wall use the full width of the page, not the text column. */
 .page { container-type: inline-size; }
 .prose .logo-wall { width: 100cqi; }
@@ -238,6 +281,10 @@ p, ul, ol, table { margin: 0 0 1em; }
   padding: 0.75rem 1.25rem; border-radius: 0.5rem; text-decoration: none;
 }
 .logo-item img { display: block; width: calc(var(--w) * var(--logo-unit)); max-width: 100%; height: auto; }
+.logo-item:not(.has-dark-logo) a { background: var(--logo-panel); }
+.logo-item:not(.has-dark-logo) .logo-text { color: var(--logo-panel-ink); }
+.logo-item .logo-img-light { display: var(--show-light-logo); }
+.logo-item .logo-img-dark { display: var(--show-dark-logo); }
 .logo-text { font-weight: 700; font-size: var(--s-18); line-height: 1.25; color: var(--ink); max-width: 14rem; text-align: center; }
 .logo-wall-compact .logo-text { font-size: var(--s-16); max-width: 11rem; }
 .logo-group-heading { font-size: var(--s-18); margin: 1.5rem 0 0; }
@@ -266,17 +313,16 @@ p, ul, ol, table { margin: 0 0 1em; }
 .footer-title { font-weight: 700; margin-bottom: 0.4rem; }
 .site-footer p { color: var(--ink-soft); }
 
-/* In dark mode, logos (made for white paper) sit on a light panel, unless the
-   institution provides a dark-mode version (logoDark). */
-@media (prefers-color-scheme: dark) {
-  .logo-item:not(.has-dark-logo) a { background: #f3f5f8; }
-  .logo-item:not(.has-dark-logo) .logo-text { color: #1a1f2b; }
-}
-
 /* ---------- Small screens ---------- */
 @media (max-width: 52rem) {
-  .logo-wall { --logo-unit: 4rem; gap: 0.75rem 1rem; }
-  .logo-wall-compact { --logo-unit: 3rem; }
+  /* Header: theme toggle at the top right, beside the site name; menu below. */
+  .site-header-inner { column-gap: 0.75rem; }
+  .brand { flex: 1 1 0; min-width: 0; }
+  .logo-header { width: 6.5rem; flex: none; }
+  .theme-toggle { order: 1; margin-left: auto; flex: none; }
+  .site-nav { order: 2; flex-basis: 100%; margin-left: 0; }
+  .logo-wall { --logo-unit: 5rem; gap: 0.75rem 1rem; }
+  .logo-wall-compact { --logo-unit: 3.75rem; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-logo { order: -1; }
   .logo-hero { max-width: 20rem; margin-left: 0; }
