@@ -28,3 +28,9 @@ lpb:
   country: Portugal
   url: https://lpbio.github.io/
   logo:
+
+BioData.pt:
+  name: BioData.pt
+  country: Portugal
+  url: https://biodata.pt
+  logo: biodata.pt.svg
