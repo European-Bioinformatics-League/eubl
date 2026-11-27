@@ -1,7 +1,27 @@
-# Every institution that has organised or sponsored an edition, defined once.
-# Editions refer to institutions by their id (the key).
-# `logo` is a file name in static/logos/ (prefer SVG; otherwise WebP or PNG under 100 kB).
-# Without a logo, the name is shown as text.
+# Every institution that has been a partner or sponsor of an edition, defined
+# once. Editions refer to institutions by their id (the key).
+#
+# Fields:
+#   name       full name, used as the logo's alternative text (required)
+#   country    shown when hovering over the logo
+#   url        where the logo links to
+#   logo       file name in assets/logos/: SVG preferred, otherwise PNG, JPEG
+#              or WebP at least 400 px high. Crop it tight, with no margin
+#              around the artwork, or it will look smaller than the others.
+#              Without a logo, the name is shown as text.
+#   logoDark   optional version of the logo for dark mode (light artwork on a
+#              transparent background); without it, the logo is shown on a
+#              light panel in dark mode
+#   logoScale  optional optical correction, default 1. The site already sizes
+#              every logo to cover the same area; use e.g. 1.15 for a thin,
+#              airy wordmark that still looks small, 0.9 for a heavy block.
+#
+# Example:
+#   rsu:
+#     name: Rīga Stradiņš University
+#     country: Latvia
+#     url: https://www.rsu.lv/en
+#     logo: rsu.svg
 
 lpb:
   name: Liga Portuguesa de Bioinformática

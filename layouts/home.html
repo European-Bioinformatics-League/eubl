@@ -53,11 +53,20 @@
 </section>
 
 {{- with $data.partners }}
-{{- if or .organisers .sponsors }}
+{{- $p := .partners }}{{ $s := .sponsors }}
+{{- if or $p $s }}
+{{- $title := "Partners and sponsors" }}{{ if not $s }}{{ $title = "Partners" }}{{ else if not $p }}{{ $title = "Sponsors" }}{{ end }}
 <section class="band band-partners" aria-labelledby="partners-heading">
   <div class="wrap">
-    <h2 id="partners-heading">Partners</h2>
-    {{ partial "partners.html" . }}
+    <h2 id="partners-heading">{{ $title }}</h2>
+    {{- with $p }}
+    {{- if $s }}<h3 class="logo-group-heading"><a href="{{ "partners/" | relURL }}">Partners</a></h3>{{ end }}
+    {{ partial "logos.html" (dict "ids" . "compact" true) }}
+    {{- end }}
+    {{- with $s }}
+    {{- if $p }}<h3 class="logo-group-heading"><a href="{{ "sponsors/" | relURL }}">Sponsors</a></h3>{{ end }}
+    {{ partial "logos.html" (dict "ids" . "compact" true) }}
+    {{- end }}
   </div>
 </section>
 {{- end }}

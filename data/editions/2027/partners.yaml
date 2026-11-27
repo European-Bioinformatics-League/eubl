@@ -1,7 +1,8 @@
-# Institutions involved in the 2027 edition, by id from data/institutions.yaml.
+# Partners and sponsors of the 2027 edition, as institution ids from
+# data/institutions.yaml. Logos are shown in the order listed here.
 # Example:
-#   organisers: [lpb]
-#   sponsors: []
+#   partners: [lpb, rsu]
+#   sponsors: [some-company]
 
-organisers: []
+partners: []
 sponsors: []

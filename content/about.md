@@ -15,6 +15,4 @@ The league grows out of the [Liga Portuguesa de Bioinformática](https://lpbio.g
 
 {{< committees >}}
 
-## Partners
-
-{{< partners >}}
+The institutions that support the league are listed on the [Partners](/partners/) and [Sponsors](/sponsors/) pages.

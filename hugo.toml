@@ -34,6 +34,14 @@ disableKinds = ["taxonomy", "term", "rss"]
     pageRef = "/editions"
     weight = 40
   [[menus.main]]
+    name = "Partners"
+    pageRef = "/partners"
+    weight = 44
+  [[menus.main]]
+    name = "Sponsors"
+    pageRef = "/sponsors"
+    weight = 46
+  [[menus.main]]
     name = "FAQ"
     pageRef = "/faq"
     weight = 50

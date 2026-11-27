@@ -1,0 +1,14 @@
+{{- /*
+  Usage: {{< logos group="partners" >}} or {{< logos group="sponsors" edition="2027" >}}
+  Shows the logos of one group in data/editions/<edition>/partners.yaml.
+*/ -}}
+{{- $group := .Get "group" -}}
+{{- if not (in (slice "partners" "sponsors") $group) }}{{ errorf "logos shortcode: group must be \"partners\" or \"sponsors\" (in %s)" .Page.File.Path }}{{ end -}}
+{{- $edition := or (.Get "edition") .Page.Params.edition site.Params.currentEdition -}}
+{{- $data := index hugo.Data.editions (string $edition) -}}
+{{- $ids := index ($data.partners | default dict) $group -}}
+{{- with $ids -}}
+{{ partial "logos.html" (dict "ids" .) }}
+{{- else -}}
+<p>{{ if eq $group "partners" }}Partner institutions{{ else }}Sponsors{{ end }} will be listed here once confirmed.</p>
+{{- end -}}

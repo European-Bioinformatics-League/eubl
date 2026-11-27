@@ -1,0 +1,22 @@
+{{- /*
+  Returns the intrinsic proportions of a logo as dict "w" "h".
+  Context: a resource from assets/logos/. SVGs are read from their viewBox
+  (or, failing that, their width and height attributes); raster images from
+  their pixel size.
+*/ -}}
+{{- $w := 0.0 }}{{ $h := 0.0 }}
+{{- if eq .MediaType.SubType "svg" }}
+  {{- $c := .Content }}
+  {{- with findRESubmatch `(?i)viewBox\s*=\s*["']\s*[-\d.eE]+[\s,]+[-\d.eE]+[\s,]+([\d.eE]+)[\s,]+([\d.eE]+)` $c 1 }}
+    {{- $w = float (index (index . 0) 1) }}{{ $h = float (index (index . 0) 2) }}
+  {{- else }}
+    {{- with findRESubmatch `<svg[^>]*\swidth\s*=\s*["']([\d.]+)` $c 1 }}{{ $w = float (index (index . 0) 1) }}{{ end }}
+    {{- with findRESubmatch `<svg[^>]*\sheight\s*=\s*["']([\d.]+)` $c 1 }}{{ $h = float (index (index . 0) 1) }}{{ end }}
+  {{- end }}
+{{- else }}
+  {{- $w = float .Width }}{{ $h = float .Height }}
+{{- end }}
+{{- if or (le $w 0.0) (le $h 0.0) }}
+  {{- errorf "logos: cannot read the proportions of assets/%s; give the SVG a viewBox attribute" .Name }}
+{{- end }}
+{{- return dict "w" $w "h" $h }}

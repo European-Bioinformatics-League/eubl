@@ -1,0 +1,15 @@
+{{- /*
+  Returns the URL to serve for a logo. Context: dict "res" (resource) and
+  "px" (pixel height needed on screen at 2x). SVGs are served as they are;
+  raster images are converted to WebP at the height needed, never upscaled.
+*/ -}}
+{{- $r := .res }}
+{{- $url := "" }}
+{{- if eq $r.MediaType.SubType "svg" }}
+  {{- $url = $r.RelPermalink }}
+{{- else if gt $r.Height .px }}
+  {{- $url = ($r.Resize (printf "x%d webp q90" .px)).RelPermalink }}
+{{- else }}
+  {{- $url = ($r.Process "webp q90").RelPermalink }}
+{{- end }}
+{{- return $url }}

@@ -20,4 +20,8 @@ toc: true
 
 ## Partners
 
-{{< partners >}}
+{{< logos group="partners" >}}
+
+## Sponsors
+
+{{< logos group="sponsors" >}}

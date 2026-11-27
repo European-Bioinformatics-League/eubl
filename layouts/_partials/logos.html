@@ -1,0 +1,51 @@
+{{- /*
+  A wall of institution logos, in the order given.
+  Context: dict "ids" (institution ids from data/institutions.yaml) and,
+  optionally, "compact" (true for the smaller version on the home page).
+
+  Logos come in every proportion, so giving them the same height or width
+  makes wide wordmarks look huge and square crests tiny. Instead, each logo
+  is sized to cover the same area: a logo with width/height ratio r is shown
+  sqrt(r) units wide and 1/sqrt(r) units high, one unit being --logo-unit in
+  the stylesheet. Extremely wide or tall logos are held within 0.4 <= r <= 7,
+  and `logoScale` in data/institutions.yaml corrects logos that still look
+  too heavy or too light (e.g. 1.15 for a thin wordmark, 0.9 for a solid block).
+*/ -}}
+{{- $base := 80 }}{{/* pixels per unit at the default --logo-unit (5rem) */}}
+<ul class="logo-wall{{ if .compact }} logo-wall-compact{{ end }}">
+  {{- range .ids }}
+  {{- $id := . }}
+  {{- $i := index hugo.Data.institutions $id }}
+  {{- if not $i }}{{ errorf "logos: unknown institution id %q (add it to data/institutions.yaml)" $id }}{{ end }}
+  {{- $logo := false }}
+  {{- with $i.logo }}
+    {{- $logo = resources.Get (printf "logos/%s" .) }}
+    {{- if not $logo }}{{ errorf "logos: %q not found in assets/logos/ (institution %q)" . $id }}{{ end }}
+  {{- end }}
+  {{- $label := $i.name }}{{ with $i.country }}{{ $label = printf "%s, %s" $label . }}{{ end }}
+  <li class="logo-item{{ if $i.logoDark }} has-dark-logo{{ end }}">
+    <a href="{{ $i.url }}" title="{{ $label }}">
+    {{- if $logo }}
+      {{- $d := partial "logo-dimensions.html" $logo }}
+      {{- $ratio := div $d.w $d.h }}
+      {{- $r := math.Max 0.4 (math.Min 7.0 $ratio) }}
+      {{- $scale := float (or $i.logoScale 1) }}
+      {{- $wu := mul $scale (math.Sqrt $r) }}
+      {{- $wpx := mul $wu $base }}{{ $hpx := div $wpx $ratio }}
+      {{- $px2 := int (math.Ceil (mul $hpx 2)) }}
+      {{- $src := partial "logo-src.html" (dict "res" $logo "px" $px2) }}
+      {{- $img := printf `<img src="%s" alt="%s" width="%d" height="%d" style="--w: %.3f" loading="lazy">` $src (htmlEscape $i.name) (int (math.Round $wpx)) (int (math.Round $hpx)) $wu }}
+      {{- with $i.logoDark }}
+        {{- $dark := resources.Get (printf "logos/%s" .) }}
+        {{- if not $dark }}{{ errorf "logos: %q not found in assets/logos/ (institution %q)" . $id }}{{ end }}
+        <picture><source srcset="{{ partial "logo-src.html" (dict "res" $dark "px" $px2) }}" media="(prefers-color-scheme: dark)">{{ $img | safeHTML }}</picture>
+      {{- else }}
+        {{- $img | safeHTML }}
+      {{- end }}
+    {{- else }}
+      <span class="logo-text">{{ $i.name }}</span>
+    {{- end }}
+    </a>
+  </li>
+  {{- end }}
+</ul>
